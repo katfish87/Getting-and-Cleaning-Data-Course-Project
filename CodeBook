@@ -1,0 +1,42 @@
+CodeBook describe the variables, data, and transformations/work performed to clean up this data set.
+
+Data Description:
+
+1.	Download the zip file from the following link: 
+          https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+2.	Unzip
+3.	Run the script titled, “peer assignment”
+4.	The script will produce a text file titled, “tidy.txt”
+a.	Row 1 of the text file: 
+5.	For more information regarding the zip file, please navigate to: 
+          http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+Transformations/Work Performed
+
+1.	The file was downloaded and unzipped
+2.	The data was read into R in the following order:
+    a.	Training Data
+        i.	trainingSubjects
+        ii.	trainingValues
+        iii.	trainingActivity
+    b.	Test Data
+        i.	testSubjects
+        ii.	testValues
+        iii.	testActivity
+    c.	Features
+    d.	Activity Labels
+3.	The training and test sets were merged to create one data set
+    a.	humanActivity was created using rbind and cbind
+4.	Only the measurements on the mean and standard deviation for each measurement were extracted
+    a.	Apply grepl
+5.	Use descriptive activity names to name the activities in the data set
+    a.	Pull rows 1 and 2 from activity column in humanActivity frame
+6.	The data set was labeled with descriptive variable names
+    a.	Removed uncessary syntax
+    b.	Replaced “f” and “t” with “frequencyDomain” and “timeDomain”
+    c.	Replaced “Acc”, “Gyro”, “Mag”, “Freq”, “mean”, “std”, “BodyBody” with: “Accelerometer”, “Gyroscope”, “Magnitude”, “Frequency”, “Mean”, “StandardDeviation”, and “Body”
+7.	A tidy data set was created with the average of each variable for each activity and each subject
+
+Variables created are mentioned above.
+
+
